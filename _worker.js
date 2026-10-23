@@ -4514,11 +4514,7 @@ async function html1101(host, 访问IP) {
 </html>`;
 }
 export default {
-  async fetch(request, env, ctx) {
-    try {
-      return await _orig.fetch(request, env, ctx);
-    } catch (e) {
-      return new Response("ERR: " + e.message + "\n" + e.stack, { status: 500 });
-    }
+  async fetch() {
+    return new Response("hello");
   }
 };
